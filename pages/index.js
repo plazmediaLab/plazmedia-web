@@ -1,7 +1,9 @@
+import Layout from 'components/layout';
+
 export default function Home() {
   return (
-    <main>
-      <h1>Plazmedia</h1>
-    </main>
+    <Layout>
+      <h1>Main section</h1>
+    </Layout>
   );
 }
