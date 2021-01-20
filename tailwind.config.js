@@ -2,11 +2,12 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: ['./pages/**/*.js', './components/**/*.js'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
         blueGray: colors.blueGray,
+        amber: colors.amber,
         brand: {
           50: '#f8f2ff',
           100: '#f1e6fe',
@@ -18,6 +19,16 @@ module.exports = {
           700: '#5400ba',
           800: '#430095',
           900: '#37007a'
+        },
+        background: {
+          dark: '#0D1017',
+          middle: '#1A202E',
+          light: '#292848'
+        },
+        font: {
+          light: '#e2e8f0',
+          secondary: '#97a6ba',
+          placeholder: '#475569'
         }
       }
     }
