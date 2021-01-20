@@ -1,21 +1,21 @@
+import Logo from 'components/resources/logo';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import NavMenu from './nav-menu';
 
 export default function Header() {
-  const [logo, setlogo] = useState('');
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     let theme = localStorage.theme;
     if (theme === 'dark') {
       document.querySelector('html').classList.add('dark');
-      setlogo('/isotype-white-fill.svg');
+      localStorage.theme = 'dark';
       setDarkMode(true);
     } else {
       document.querySelector('html').classList.remove('dark');
       localStorage.theme = 'light';
-      setlogo('/isotype-dark-fill.svg');
+      setDarkMode(false);
     }
   }, [darkMode]);
 
@@ -23,12 +23,7 @@ export default function Header() {
     <header className="border-b border-blueGray-200 dark:border-blueGray-900 w-full grid place-items-center dark:bg-background-middle">
       <section className="container px-3 md:px-6 mx-auto flex items-center gap-x-4">
         <Link href="/">
-          <img
-            title="Página Inicio"
-            src={logo}
-            alt="Plazmedia logo"
-            className="h-9 cursor-pointer"
-          />
+          <Logo className="w-9 h-9" darkMode={darkMode} />
         </Link>
         <input
           type="text"

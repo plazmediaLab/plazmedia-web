@@ -21,6 +21,7 @@ module.exports = {
           900: '#37007a'
         },
         background: {
+          brand: '#1D1D1B',
           dark: '#0D1017',
           middle: '#1A202E',
           light: '#292848'
