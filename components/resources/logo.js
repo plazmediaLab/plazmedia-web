@@ -1,4 +1,10 @@
-export default function Logo({ darkMode, ...props }) {
+import AppContext from 'context/AppContext/AppContext';
+import { useContext } from 'react';
+
+export default function Logo({ ...props }) {
+  const appContext = useContext(AppContext);
+  const { darkMode } = appContext;
+
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.62 410" {...props}>
       <title>{'Plazmedia isotype'}</title>

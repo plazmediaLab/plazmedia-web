@@ -1,26 +1,25 @@
 import AppContext from 'context/AppContext/AppContext';
 import { useContext } from 'react';
 
-export default function DarkModeSwitch({ setDarkMode }) {
+export default function DarkModeSwitch() {
   const appContext = useContext(AppContext);
   const { darkMode, setDarkModeMethod } = appContext;
 
-  // const handleDarkMode = () => {
-  // setDarkModeMethod();
-  //   if (!darkMode) {
-  //     setDarkMode(true);
-  //     document.querySelector('html').classList.add('dark');
-  //     localStorage.theme = 'dark';
-  //   } else {
-  //     setDarkMode(false);
-  //     document.querySelector('html').classList.remove('dark');
-  //     localStorage.theme = 'light';
-  //   }
-  // };
+  const setTheme = () => {
+    if (!darkMode) {
+      document.querySelector('html').classList.add('dark');
+      localStorage.theme = 'dark';
+      setDarkModeMethod(true);
+    } else {
+      document.querySelector('html').classList.remove('dark');
+      localStorage.theme = 'light';
+      setDarkModeMethod(false);
+    }
+  };
 
   return (
     <button
-      onClick={setDarkModeMethod}
+      onClick={setTheme}
       title="Activar modo oscuro"
       className="w-8 h-8 grid place-items-center bg-blueGray-100 rounded-full text-blueGray-500 hover:bg-blueGray-200 dark:bg-blueGray-700">
       {darkMode ? (

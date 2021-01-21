@@ -13,10 +13,10 @@ const AppStore = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   // Methods
-  const setDarkModeMethod = () => {
-    console.log('Connect...');
+  const setDarkModeMethod = (status) => {
     dispatch({
-      type: DARK_MODE
+      type: DARK_MODE,
+      payload: status
     });
   };
 

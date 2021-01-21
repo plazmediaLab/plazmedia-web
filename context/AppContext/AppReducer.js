@@ -5,7 +5,7 @@ export default function AppReducer(state, action) {
     case DARK_MODE:
       return {
         ...state,
-        darkMode: !state.darkMode
+        darkMode: !action.payload ? !state.darkMode : action.payload
       };
 
     default:
