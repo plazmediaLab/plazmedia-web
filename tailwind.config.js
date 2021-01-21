@@ -29,13 +29,16 @@ module.exports = {
         font: {
           light: '#e2e8f0',
           secondary: '#97a6ba',
-          placeholder: '#475569'
+          placeholder: '#475569',
+          alternative: '#14D8C3'
         }
       }
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      backgroundOpacity: ['dark']
+    }
   },
   plugins: []
 };
