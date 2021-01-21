@@ -7,9 +7,13 @@ export default function NavMenu({ darkMode, setDarkMode, ...props }) {
   return (
     <nav {...props}>
       <MainButton>Escribir Post</MainButton>
-      <Link href="/">Inicio</Link>
-      <Link href="/posts">Publicaciones</Link>
-      <DarkModeSwitch darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Link href="/">
+        <a className="text-brand-500">Home</a>
+      </Link>
+      <Link href="/posts">
+        <a>Publicaciones</a>
+      </Link>
+      <DarkModeSwitch /*darkMode={darkMode} setDarkMode={setDarkMode}*/ />
     </nav>
   );
 }
