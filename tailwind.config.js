@@ -5,6 +5,10 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      boxShadow: {
+        'dark-header': '0px 2px 7px 0px rgba(0,0,0,0.6)',
+        'light-header': '0px 2px 10px 0px rgba(0,0,0,0.005), 0px 1px 5px -1px rgba(0,0,0,0.03)'
+      },
       colors: {
         blueGray: colors.blueGray,
         amber: colors.amber,
@@ -39,7 +43,8 @@ module.exports = {
   variants: {
     extend: {
       backgroundOpacity: ['dark'],
-      fontWeight: ['dark']
+      fontWeight: ['dark'],
+      boxShadow: ['dark']
       // borderWidth: ['dark'],
       // borderOpacity: ['dark']
     }
