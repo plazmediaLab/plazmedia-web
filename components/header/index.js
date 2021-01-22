@@ -21,7 +21,7 @@ export default function Header() {
           <div
             title="Conectado para responder dudas"
             className={`${
-              online ? 'bg-green-500' : 'bg-blueGray-300 dark:bg-blueGray-500'
+              online ? 'bg-green-500 dark:bg-teal-400' : 'bg-blueGray-300 dark:bg-blueGray-500'
             } w-2 h-2 rounded-full absolute -top-1 -left-0`}></div>
         </span>
         <ButtonToggleMenu className="md:hidden bg-blueGray-100 rounded-full text-blueGray-500 dark:hover:text-font-light hover:bg-blueGray-200 dark:bg-blueGray-800 justify-self-end w-9 h-9 grid place-items-center" />

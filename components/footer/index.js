@@ -21,11 +21,11 @@ export default function Footer() {
             Status:{' '}
             <span
               className={`ml-1 inline-block w-2 h-2 rounded-full ${
-                online ? 'bg-green-500' : 'bg-blueGray-400'
+                online ? 'bg-green-500 dark:bg-teal-400' : 'bg-blueGray-400'
               }`}></span>{' '}
             <span
               className={` ${
-                online ? 'text-green-500 font-medium' : 'text-font-secondary'
+                online ? 'text-green-500 dark:text-teal-400 font-medium' : 'text-font-secondary'
               } dark:font-normal`}>
               {online ? 'Online' : 'Disconnected'}
             </span>

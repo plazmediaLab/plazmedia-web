@@ -9,6 +9,7 @@ module.exports = {
         blueGray: colors.blueGray,
         amber: colors.amber,
         lime: colors.lime,
+        teal: colors.teal,
         brand: {
           50: '#f8f2ff',
           100: '#f1e6fe',
@@ -30,8 +31,7 @@ module.exports = {
         font: {
           light: '#e2e8f0',
           secondary: '#97a6ba',
-          placeholder: '#475569',
-          alternative: '#14D8C3'
+          placeholder: '#475569'
         }
       }
     }
