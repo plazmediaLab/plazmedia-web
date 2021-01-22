@@ -1,15 +1,11 @@
 import IconButton from 'components/resources/icon-button';
 import MainButton from 'components/resources/main-button';
 import SecondaryButton from 'components/resources/secondary-button';
-import AppContext from 'context/AppContext/AppContext';
 import Link from 'next/link';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import DarkModeSwitch from './dark-mode-switch';
 
-export default function NavMenu({ ...props }) {
-  const appContext = useContext(AppContext);
-  const { setDarkModeMethod } = appContext;
-
+export default function NavMenu({ setDarkModeMethod, ...props }) {
   useEffect(() => {
     if (process.browser) {
       let theme = localStorage.theme;

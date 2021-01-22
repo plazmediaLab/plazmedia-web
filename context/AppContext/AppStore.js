@@ -1,4 +1,4 @@
-import { DARK_MODE } from 'context/types';
+import { DARK_MODE, SET_ONLINE } from 'context/types';
 import { useReducer } from 'react';
 import AppContext from './AppContext';
 import AppReducer from './AppReducer';
@@ -6,7 +6,8 @@ import AppReducer from './AppReducer';
 const AppStore = ({ children }) => {
   // Initial state
   const initialState = {
-    darkMode: false
+    darkMode: false,
+    online: false
   };
 
   // Reducer
@@ -19,14 +20,21 @@ const AppStore = ({ children }) => {
       payload: status
     });
   };
+  const setOnlineMethod = () => {
+    dispatch({
+      type: SET_ONLINE
+    });
+  };
 
   // Provider
   return (
     <AppContext.Provider
       value={{
         darkMode: state.darkMode,
+        online: state.online,
         // Methods
-        setDarkModeMethod
+        setDarkModeMethod,
+        setOnlineMethod
       }}>
       {children}
     </AppContext.Provider>

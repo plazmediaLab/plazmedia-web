@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         blueGray: colors.blueGray,
         amber: colors.amber,
+        lime: colors.lime,
         brand: {
           50: '#f8f2ff',
           100: '#f1e6fe',
@@ -37,7 +38,10 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundOpacity: ['dark']
+      backgroundOpacity: ['dark'],
+      fontWeight: ['dark']
+      // borderWidth: ['dark'],
+      // borderOpacity: ['dark']
     }
   },
   plugins: []
