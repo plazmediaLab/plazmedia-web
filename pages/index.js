@@ -1,20 +1,10 @@
 import Layout from 'components/layout';
-import AppContext from 'context/AppContext/AppContext';
-import { useContext } from 'react';
+import HomeMainContent from 'components/home';
 
 export default function Home() {
-  const appContext = useContext(AppContext);
-  const { online, setOnlineMethod } = appContext;
-
   return (
     <Layout>
-      <h1>Main section</h1>
-      <button
-        type="button"
-        onClick={setOnlineMethod}
-        className={`${online ? 'text-red-500' : 'text-green-500'}`}>
-        {online ? 'Disconnect' : 'Connect'}
-      </button>
+      <HomeMainContent />
     </Layout>
   );
 }

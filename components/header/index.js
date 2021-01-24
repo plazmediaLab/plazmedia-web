@@ -7,7 +7,7 @@ import CircleButtons from './circle-buttons';
 
 export default function Header() {
   const appContext = useContext(AppContext);
-  const { online, setDarkModeMethod } = appContext;
+  const { darkMode, online, setDarkModeMethod } = appContext;
 
   const handleToggleMenu = () => {
     const toggleMenu = document.getElementById('toggle-menu');
@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 border-b border-blueGray-200 dark:border-blueGray-800 w-full grid place-items-center bg-white dark:bg-background-middle shadow-light-header md:shadow-none dark:shadow-dark-header md:dark:shadow-none">
-      <section className="container px-3 md:px-6 py-3 md:my-0 mx-auto grid items-center gap-3 md:gap-y-0">
+      <section className="container px-3 md:px-6 py-3 md:py-0 mx-auto grid items-center gap-3 md:gap-y-0">
         <span className="relative">
           <Link href="/">
             <a>
@@ -39,8 +39,9 @@ export default function Header() {
         />
         <NavMenu
           id="toggle-menu"
+          darkMode={darkMode}
           setDarkModeMethod={setDarkModeMethod}
-          className="toggle-menu hidden w-full md:w-auto col-span-2 md:col-span-1 justify-self-start md:justify-self-end md:flex gap-x-3 flex-col md:flex-row gap-y-3 md:gap-y-0"
+          className="toggle-menu hidden w-full md:w-auto col-span-2 md:col-span-1 justify-self-start md:justify-self-end md:flex items-center gap-x-3 flex-col md:flex-row gap-y-3 md:gap-y-0"
         />
       </section>
       <style jsx>{`

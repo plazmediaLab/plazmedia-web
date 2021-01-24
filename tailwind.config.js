@@ -44,7 +44,8 @@ module.exports = {
     extend: {
       backgroundOpacity: ['dark'],
       fontWeight: ['dark'],
-      boxShadow: ['dark']
+      boxShadow: ['dark'],
+      opacity: ['disabled']
       // borderWidth: ['dark'],
       // borderOpacity: ['dark']
     }
