@@ -7,6 +7,7 @@ export default function Layout({ children }) {
     <>
       <Seo />
       <Header />
+      <div id="modal-section" className="relative" />
       <main className="container mx-auto px-3 md:px-6 py-5">{children}</main>
       <Footer />
       <style jsx>{`

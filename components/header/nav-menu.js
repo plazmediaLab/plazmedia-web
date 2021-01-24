@@ -1,5 +1,3 @@
-// import MainButton from 'components/resources/main-button';
-// import SecondaryButton from 'components/resources/secondary-button';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import CircleButtons from './circle-buttons';
@@ -27,7 +25,7 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
             router.asPath === '/'
               ? 'active-link text-brand-500 dark:text-teal-400 dark:hover:text-teal-300'
               : 'dark:text-font-secondary dark:hover:text-font-light'
-          } py-3 px-2 hover:text-brand-500 relative`}>
+          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto`}>
           Inicio
         </a>
       </Link>
@@ -37,19 +35,8 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
             router.asPath === '/projects'
               ? 'active-link text-brand-500 dark:text-teal-400 dark:hover:text-teal-300'
               : 'dark:text-font-secondary dark:hover:text-font-light'
-          } py-3 px-2 hover:text-brand-500 relative`}>
+          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto`}>
           Proyectos
-        </a>
-      </Link>
-      <Link href="/cv">
-        <a
-          disabled={true}
-          className={`${
-            router.asPath === '/cv'
-              ? 'active-link text-brand-500 dark:text-teal-400 dark:hover:text-teal-300'
-              : 'dark:text-font-secondary dark:hover:text-font-light'
-          } py-3 px-2 hover:text-brand-500 relative`}>
-          CV
         </a>
       </Link>
       <Link href="/about-plazmedia">
@@ -59,19 +46,11 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
             router.asPath === '/about-plazmedia'
               ? 'active-link text-brand-500 dark:text-teal-400 dark:hover:text-teal-300'
               : 'dark:text-font-secondary dark:hover:text-font-light'
-          } py-3 px-2 hover:text-brand-500 relative`}>
+          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto`}>
           Sobre Plazmedia
         </a>
       </Link>
       <CircleButtons className="md:flex gap-x-3 items-center justify-self-end hidden" />
-      {/* <SecondaryButton>Registrarse</SecondaryButton>
-      <MainButton>Iniciar sesión</MainButton> */}
-      {/* <MainButton>Escribir Post</MainButton>
-      <Link href="/posts">
-        <a className="hover:text-brand-500 dark:text-font-secondary dark:hover:text-font-light">
-          Publicaciones
-        </a>
-      </Link> */}
       <style jsx>{`
         nav.toggle-menu {
           display: hidden;
@@ -87,13 +66,17 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
           background-color: ${darkMode ? '#2dd4bf' : '#7000f8'};
           opacity: ${darkMode ? '0.5' : '0.2'};
           position: absolute;
-          bottom: 0.2rem;
-          left: calc(50% - 2px);
+          bottom: calc(50% - 0.2rem);
+          left: calc(100% - 1rem);
           border-radius: 50%;
         }
         @media (min-width: 768px) {
           nav.open {
             display: flex !important;
+          }
+          a.active-link::before {
+            bottom: 0.2rem;
+            left: calc(50% - 2px);
           }
         }
       `}</style>

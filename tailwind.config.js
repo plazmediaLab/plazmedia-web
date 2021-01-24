@@ -45,9 +45,9 @@ module.exports = {
       backgroundOpacity: ['dark'],
       fontWeight: ['dark'],
       boxShadow: ['dark'],
-      opacity: ['disabled']
+      opacity: ['disabled'],
+      borderOpacity: ['dark']
       // borderWidth: ['dark'],
-      // borderOpacity: ['dark']
     }
   },
   plugins: []
