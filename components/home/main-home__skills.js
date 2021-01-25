@@ -7,8 +7,10 @@ export default function MainHomeSkills() {
 
   return (
     <>
-      <h2 className="text-2xl font-bold mb-4">Conocimientos técnicos y habilidades</h2>
-      <h4 className="font-medium mb-2">
+      <h2 className="text-center md:text-left text-2xl font-bold mb-4">
+        Conocimientos técnicos y habilidades
+      </h2>
+      <h4 className="text-center md:text-left font-medium mb-2 dark:text-font-secondary">
         <svg
           className="w-5 h-5 inline-block"
           fill="currentColor"
@@ -22,14 +24,14 @@ export default function MainHomeSkills() {
         </svg>{' '}
         Desarrollo FrontEnd
       </h4>
-      <ul className="ml-6 text-xs tracking-wide flex flex-wrap gap-2 mb-5">
+      <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
         {skills[0]?.frontend?.map((item) => (
-          <li className="tag-list-item text-blueGray-500" key={item?.id}>
+          <li className="tag-list-item" key={item?.id}>
             {item?.name}
           </li>
         ))}
       </ul>
-      <h4 className="font-medium mb-2">
+      <h4 className="text-center md:text-left font-medium mb-2 dark:text-font-secondary">
         <svg
           className="w-5 h-5 inline-block"
           fill="currentColor"
@@ -43,14 +45,14 @@ export default function MainHomeSkills() {
         </svg>{' '}
         BackEnd & DB <small className="font-normal">(Non-Relational Database)</small>
       </h4>
-      <ul className="ml-6 text-xs tracking-wide flex flex-wrap gap-2 mb-5">
+      <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
         {skills[1]?.backend?.map((item) => (
-          <li className="tag-list-item text-blueGray-500" key={item?.id}>
+          <li className="tag-list-item" key={item?.id}>
             {item?.name}
           </li>
         ))}
       </ul>
-      <h4 className="font-medium mb-2">
+      <h4 className="text-center md:text-left font-medium mb-2 dark:text-font-secondary">
         <svg
           className="w-5 h-5 inline-block"
           fill="currentColor"
@@ -64,9 +66,9 @@ export default function MainHomeSkills() {
         </svg>{' '}
         Diseño gráfico & UI
       </h4>
-      <ul className="ml-6 text-xs tracking-wide flex flex-wrap gap-2 mb-5">
+      <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
         {skills[2]?.graphic_design?.map((item) => (
-          <li className="tag-list-item text-blueGray-500" key={item?.id}>
+          <li className="tag-list-item" key={item?.id}>
             {item?.name}
           </li>
         ))}

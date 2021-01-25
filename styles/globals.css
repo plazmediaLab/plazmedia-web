@@ -15,5 +15,5 @@ button:active {
 }
 
 .tag-list-item {
-  @apply py-small px-3 rounded-full bg-blueGray-200
+  @apply py-small px-3 rounded-full bg-blueGray-200 text-blueGray-500 dark:bg-blueGray-800
 }
