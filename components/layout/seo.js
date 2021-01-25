@@ -3,6 +3,7 @@ import Head from 'next/head';
 export default function Seo() {
   return (
     <Head>
+      <html lang="es" />
       <meta charSet="utf-8" />
       <meta name="author" content="Adrian Nieves Uribe" />
       <meta name="copyright" content="Adrian Nieves Uribe - Plazmedia" />

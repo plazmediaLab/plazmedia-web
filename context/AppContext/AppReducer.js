@@ -1,4 +1,4 @@
-import { DARK_MODE, SET_ONLINE } from 'context/types';
+import { DARK_MODE, SET_ONLINE, SET_SKILLS } from 'context/types';
 
 export default function AppReducer(state, action) {
   switch (action.type) {
@@ -11,6 +11,11 @@ export default function AppReducer(state, action) {
       return {
         ...state,
         online: !state.online
+      };
+    case SET_SKILLS:
+      return {
+        ...state,
+        skills: action.payload
       };
 
     default:

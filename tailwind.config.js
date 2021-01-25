@@ -5,6 +5,18 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      padding: {
+        small: '0.1rem'
+      },
+      margin: {
+        small: '0.1rem'
+      },
+      minWidth: {
+        5: '1.25rem'
+      },
+      minHeight: {
+        5: '1.25rem'
+      },
       boxShadow: {
         'dark-header': '0px 2px 7px 0px rgba(0,0,0,0.6)',
         'light-header': '0px 2px 10px 0px rgba(0,0,0,0.005), 0px 1px 5px -1px rgba(0,0,0,0.03)'

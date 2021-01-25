@@ -13,3 +13,7 @@ button:active {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
 }
+
+.tag-list-item {
+  @apply py-small px-3 rounded-full bg-blueGray-200
+}
