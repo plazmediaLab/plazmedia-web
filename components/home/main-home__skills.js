@@ -1,9 +1,18 @@
 import AppContext from 'context/AppContext/AppContext';
-import { useContext } from 'react';
+import useGetSkills from 'hooks/useGetSkills';
+import { useContext, useEffect } from 'react';
 
 export default function MainHomeSkills() {
   const appContext = useContext(AppContext);
   const { skills } = appContext;
+
+  const [getSkills] = useGetSkills();
+
+  useEffect(() => {
+    if (skills.length === 0) {
+      getSkills();
+    }
+  }, []);
 
   return (
     <>
@@ -25,7 +34,7 @@ export default function MainHomeSkills() {
         Desarrollo FrontEnd
       </h4>
       <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
-        {skills[0]?.frontend?.map((item) => (
+        {skills[0]?.skills?.map((item) => (
           <li className="tag-list-item" key={item?.id}>
             {item?.name}
           </li>
@@ -46,7 +55,7 @@ export default function MainHomeSkills() {
         BackEnd & DB <small className="font-normal">(Non-Relational Database)</small>
       </h4>
       <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
-        {skills[1]?.backend?.map((item) => (
+        {skills[1]?.skills?.map((item) => (
           <li className="tag-list-item" key={item?.id}>
             {item?.name}
           </li>
@@ -67,7 +76,7 @@ export default function MainHomeSkills() {
         Diseño gráfico & UI
       </h4>
       <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
-        {skills[2]?.graphic_design?.map((item) => (
+        {skills[2]?.skills?.map((item) => (
           <li className="tag-list-item" key={item?.id}>
             {item?.name}
           </li>

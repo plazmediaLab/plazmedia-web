@@ -10,7 +10,6 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
     if (process.browser) {
       let theme = localStorage.theme;
       if (theme === 'dark') {
-        console.log('Dark done...');
         document.querySelector('html').classList.add('dark');
         setDarkModeMethod(true);
       }
