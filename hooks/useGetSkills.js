@@ -10,12 +10,11 @@ function useGetSkills() {
 
   const getSkills = async () => {
     setLoading(true);
-    console.log(process.env.API_HOST);
-    const res = await fetch(`${process.env.API_HOST}/skills-categories`);
+    console.log(process.env.NEXT_PUBLIC_API_HOST);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/skills-categories`);
     const json = await res.json();
 
     setLoading(false);
-    console.log(json);
     setSkillsMethod(json);
   };
 
