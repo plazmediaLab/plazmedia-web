@@ -11,6 +11,14 @@ module.exports = {
       margin: {
         small: '0.1rem'
       },
+      width: {
+        18: '4.5rem',
+        22: '5.5rem',
+        26: '6.5rem',
+        30: '7.5rem',
+        34: '8.5rem',
+        38: '9.5rem'
+      },
       minWidth: {
         5: '1.25rem'
       },
