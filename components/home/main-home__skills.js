@@ -1,19 +1,19 @@
-import SkeletonLoading from 'components/resources/skeleton-loading';
+// import SkeletonLoading from 'components/resources/skeleton-loading';
 import AppContext from 'context/AppContext/AppContext';
-import useGetSkills from 'hooks/useGetSkills';
+// import useGetSkills from 'hooks/useGetSkills';
 import { useContext, useEffect } from 'react';
 
 export default function MainHomeSkills() {
   const appContext = useContext(AppContext);
   const { skills } = appContext;
 
-  const [getSkills, loading] = useGetSkills();
+  // const [getSkills, loading] = useGetSkills();
 
-  useEffect(() => {
-    if (skills.length === 0) {
-      getSkills();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (skills.length === 0) {
+  //     // getSkills();
+  //   }
+  // }, []);
 
   const [frontend, backend, graphic_design] = skills;
 
@@ -37,15 +37,15 @@ export default function MainHomeSkills() {
         Desarrollo FrontEnd
       </h4>
       <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
-        {loading ? (
+        {/* {!loading ? (
           <SkeletonLoading />
         ) : (
-          frontend?.skills?.map((item) => (
-            <li className="tag-list-item" key={item?.id}>
-              {item?.name}
-            </li>
-          ))
-        )}
+          )} */}
+        {frontend?.skills?.map((item) => (
+          <li className="tag-list-item" key={item?.id}>
+            {item?.name}
+          </li>
+        ))}
       </ul>
       <h4 className="text-center md:text-left font-medium mb-2 dark:text-font-secondary">
         <svg
@@ -62,15 +62,15 @@ export default function MainHomeSkills() {
         BackEnd & DB <small className="font-normal">(Non-Relational Database)</small>
       </h4>
       <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
-        {loading ? (
+        {/* {!loading ? (
           <SkeletonLoading />
         ) : (
-          backend?.skills?.map((item) => (
-            <li className="tag-list-item" key={item?.id}>
-              {item?.name}
-            </li>
-          ))
-        )}
+          )} */}
+        {backend?.skills?.map((item) => (
+          <li className="tag-list-item" key={item?.id}>
+            {item?.name}
+          </li>
+        ))}
       </ul>
       <h4 className="text-center md:text-left font-medium mb-2 dark:text-font-secondary">
         <svg
@@ -87,15 +87,15 @@ export default function MainHomeSkills() {
         Diseño gráfico & UI
       </h4>
       <ul className="ml-0 md:ml-6 text-xs tracking-wide flex justify-center md:justify-start mx-auto flex-wrap gap-2 mb-5">
-        {loading ? (
+        {/* {!loading ? (
           <SkeletonLoading nItems={5} />
         ) : (
-          graphic_design?.skills?.map((item) => (
-            <li className="tag-list-item" key={item?.id}>
-              {item?.name}
-            </li>
-          ))
-        )}
+          )} */}
+        {graphic_design?.skills?.map((item) => (
+          <li className="tag-list-item" key={item?.id}>
+            {item?.name}
+          </li>
+        ))}
       </ul>
     </>
   );

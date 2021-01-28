@@ -2,7 +2,7 @@
 const skills = [
   {
     id: '1',
-    frontend: [
+    skills: [
       { id: '1', name: 'Html5' },
       { id: '2', name: 'Ccs3, Flexbox, Css Grid' },
       { id: '3', name: 'Javascript' },
@@ -16,7 +16,7 @@ const skills = [
   },
   {
     id: '2',
-    backend: [
+    skills: [
       { id: '1', name: 'Node Js' },
       { id: '2', name: 'Express' },
       { id: '3', name: 'Firebase' },
@@ -28,7 +28,7 @@ const skills = [
   },
   {
     id: '3',
-    graphic_design: [
+    skills: [
       { id: '1', name: 'Photoshop' },
       { id: '1', name: 'Illustrator' },
       { id: '1', name: 'Adobe XD' },
