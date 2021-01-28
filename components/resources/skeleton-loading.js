@@ -34,7 +34,7 @@ export default function SkeletonLoading({ nItems = 10, itemHeight = '1rem', dire
   for (let i = 0; i < nItems; ++i) {
     stars.push(
       <span
-        className={`${random(16, 40)} bg-blueGray-200 dark:bg-blueGray-800 rounded-full`}
+        className={`${random(12, 40)} bg-blueGray-200 dark:bg-blueGray-800 rounded-full`}
         key={i}>
         <style jsx>{`
           span {
