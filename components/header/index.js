@@ -10,7 +10,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   const appContext = useContext(AppContext);
-  const { darkMode, online, setDarkModeMethod } = appContext;
+  const { darkMode, setDarkModeMethod } = appContext;
 
   const handleToggleMenu = () => {
     const toggleMenu = document.getElementById('toggle-menu');
@@ -32,11 +32,6 @@ export default function Header() {
               <Logo className="w-9 h-9" />
             </a>
           </Link>
-          <div
-            title="Conectado para responder dudas"
-            className={`${
-              online ? 'bg-green-500 dark:bg-teal-400' : 'bg-blueGray-300 dark:bg-blueGray-500'
-            } w-2 h-2 rounded-full absolute -top-1 -left-0`}></div>
         </span>
         <CircleButtons
           handleToggleMenu={handleToggleMenu}

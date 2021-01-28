@@ -10,12 +10,12 @@ function Home() {
 }
 
 // export async function getStaticProps() {
-//   const res = await fetch(`${process.env.API_LOCAL_HOST}/skills`);
+//   const res = await fetch(`${process.env.API_HOST}/skills`);
 //   const json = await res.json();
 
 //   return {
 //     props: {
-//       skills: json
+//       skills: json ? json : []
 //     }
 //   };
 // }

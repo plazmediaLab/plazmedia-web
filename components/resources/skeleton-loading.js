@@ -20,8 +20,6 @@ export default function SkeletonLoading({ nItems = 10, itemHeight = '1rem', dire
     }
   }
 
-  console.log(random(16, 32));
-
   function getVarian2(i) {
     let delayMilliseconds;
     const count = i * 4;
@@ -30,7 +28,6 @@ export default function SkeletonLoading({ nItems = 10, itemHeight = '1rem', dire
     } else {
       delayMilliseconds = `1.${String(count)}s`;
     }
-    console.log(delayMilliseconds);
     return delayMilliseconds;
   }
 

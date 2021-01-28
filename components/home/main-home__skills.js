@@ -15,6 +15,8 @@ export default function MainHomeSkills() {
     }
   }, []);
 
+  const [frontend, backend, graphic_design] = skills;
+
   return (
     <>
       <h2 className="text-center md:text-left text-2xl font-bold mb-4">
@@ -38,7 +40,7 @@ export default function MainHomeSkills() {
         {loading ? (
           <SkeletonLoading />
         ) : (
-          skills[0]?.skills?.map((item) => (
+          frontend?.skills?.map((item) => (
             <li className="tag-list-item" key={item?.id}>
               {item?.name}
             </li>
@@ -63,7 +65,7 @@ export default function MainHomeSkills() {
         {loading ? (
           <SkeletonLoading />
         ) : (
-          skills[1]?.skills?.map((item) => (
+          backend?.skills?.map((item) => (
             <li className="tag-list-item" key={item?.id}>
               {item?.name}
             </li>
@@ -88,7 +90,7 @@ export default function MainHomeSkills() {
         {loading ? (
           <SkeletonLoading nItems={5} />
         ) : (
-          skills[2]?.skills?.map((item) => (
+          graphic_design?.skills?.map((item) => (
             <li className="tag-list-item" key={item?.id}>
               {item?.name}
             </li>

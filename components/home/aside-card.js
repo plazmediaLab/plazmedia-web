@@ -2,6 +2,7 @@ import MainButton from 'components/resources/main-button';
 import SecondaryButton from 'components/resources/secondary-button';
 import AsideCardAvatar from './aside-card__avatar';
 import AsideCardBiography from './aside-card__biography';
+import Languages from './aside-card__languages';
 import AsideCardSocialNetwork from './aside-card__social-network';
 
 export default function Asidecard({ ...props }) {
@@ -9,18 +10,7 @@ export default function Asidecard({ ...props }) {
     <aside>
       <article {...props}>
         <AsideCardAvatar />
-        <span className="grid gap-3 grid-cols-2 md:grid-cols-1">
-          <MainButton>
-            <svg
-              className="w-5 h-5 inline-block mr-2"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
-            Contactar
-          </MainButton>
+        <span className="grid gap-3 grid-cols-2">
           <SecondaryButton>
             <svg
               className="w-5 h-5 min-w-5 min-h-5 inline-block mr-1"
@@ -35,7 +25,19 @@ export default function Asidecard({ ...props }) {
             </svg>{' '}
             Descargar CV
           </SecondaryButton>
+          <MainButton>
+            <svg
+              className="w-5 h-5 inline-block mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            Contactar
+          </MainButton>
         </span>
+        <Languages className="text-sm tracking-wide text-blueGray-400" />
         <AsideCardBiography />
         <AsideCardSocialNetwork />
       </article>

@@ -6,7 +6,7 @@ export default function AsideCardBiography() {
   return (
     <article className="text-blueGray-400 text-sm leading-5 hidden md:block">
       <hr className="border-blueGray-200 my-5 dark:border-blueGray-700 dark:border-opacity-60" />
-      <h2 className="text-lg font-medium text-center mb-2">Hacerca de mi</h2>
+      <h2 className="text-lg font-medium text-center md:text-left mb-2">Hacerca de mi</h2>
       <p>
         Programador autodidacta con enfoque en manejo de tecnologías JavaScript entre las que se
         encuentran Next.js, Gatsby.js, Node js, Express, TailwindCSS, etc. Frameworks y librerías de
