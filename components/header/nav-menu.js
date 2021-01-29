@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import CircleButtons from './circle-buttons';
 import { useRouter } from 'next/router';
+import LineButton from 'components/resources/line-button';
 
 export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
   const router = useRouter();
@@ -24,7 +25,7 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
             router.asPath === '/'
               ? 'active-link text-brand-500 dark:text-teal-400 dark:hover:text-teal-300'
               : 'dark:text-font-secondary dark:hover:text-font-light'
-          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto`}>
+          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto whitespace-nowrap`}>
           Inicio
         </a>
       </Link>
@@ -34,7 +35,7 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
             router.asPath === '/projects'
               ? 'active-link text-brand-500 dark:text-teal-400 dark:hover:text-teal-300'
               : 'dark:text-font-secondary dark:hover:text-font-light'
-          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto`}>
+          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto whitespace-nowrap`}>
           Proyectos
         </a>
       </Link>
@@ -45,10 +46,11 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
             router.asPath === '/about-plazmedia'
               ? 'active-link text-brand-500 dark:text-teal-400 dark:hover:text-teal-300'
               : 'dark:text-font-secondary dark:hover:text-font-light'
-          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto`}>
+          } py-1 md:py-3 px-2 hover:text-brand-500 relative w-full md:w-auto whitespace-nowrap`}>
           Sobre Plazmedia
         </a>
       </Link>
+      <LineButton onClick={() => router.push('/login')}>Iniciar sesión</LineButton>
       <CircleButtons className="md:flex gap-x-3 items-center justify-self-end hidden" />
       <style jsx>{`
         nav.toggle-menu {

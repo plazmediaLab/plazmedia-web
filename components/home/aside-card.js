@@ -11,7 +11,7 @@ export default function Asidecard({ ...props }) {
       <article {...props}>
         <AsideCardAvatar />
         <span className="grid gap-3 grid-cols-2">
-          <SecondaryButton>
+          <SecondaryButton type="button">
             <svg
               className="w-5 h-5 min-w-5 min-h-5 inline-block mr-1"
               fill="currentColor"
@@ -25,7 +25,7 @@ export default function Asidecard({ ...props }) {
             </svg>{' '}
             Descargar CV
           </SecondaryButton>
-          <MainButton>
+          <MainButton type="button">
             <svg
               className="w-5 h-5 inline-block mr-2"
               fill="currentColor"

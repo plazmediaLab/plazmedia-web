@@ -66,7 +66,8 @@ module.exports = {
       fontWeight: ['dark'],
       boxShadow: ['dark'],
       opacity: ['disabled'],
-      borderOpacity: ['dark']
+      borderOpacity: ['dark'],
+      transitionProperty: ['hover', 'focus']
       // borderWidth: ['dark'],
     }
   },

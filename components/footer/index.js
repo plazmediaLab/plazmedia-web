@@ -8,7 +8,9 @@ export default function Footer() {
   const { online } = appContext;
 
   return (
-    <footer className="text-sm w-full grid place-items-center bg-blueGray-200 dark:bg-background-middle">
+    <footer
+      id="footer-content"
+      className="text-sm w-full grid place-items-center bg-blueGray-200 dark:bg-background-middle">
       <section className="container px-3 md:px-6 mx-auto my-9">
         <span>
           <LogoFull className="w-28" />
