@@ -1,15 +1,23 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import jwtVerification from 'helpers/jwt-verification';
+import { useRouter } from 'next/router';
+import AppContext from 'context/AppContext/AppContext';
 
 function useLogin() {
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
+  const appContext = useContext(AppContext);
+  const { setLoggedMethod } = appContext;
 
   const formik = useFormik({
     initialValues: {
-      identifier: '',
-      password: ''
+      identifier: 'adrian@gmail.com',
+      password: '12345678'
     },
     validationSchema: Yup.object({
       identifier: Yup.string()
@@ -27,8 +35,17 @@ function useLogin() {
           'Content-Type': 'application/json'
         }
       });
-      const json = await res.json();
-      console.log(json);
+
+      if (res?.status === 200) {
+        const { jwt } = await res.json();
+        const verify = new jwtVerification(jwt).isValid;
+        console.log(verify);
+        setLoggedMethod(true);
+        router.push('/');
+      } else {
+        console.log(res);
+      }
+
       setLoading(false);
     }
   });
