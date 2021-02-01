@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import jwtVerification from 'helpers/jwt-verification';
+// import jwtVerification from 'helpers/jwt-verification';
 import { useRouter } from 'next/router';
 import AppContext from 'context/AppContext/AppContext';
+import { setCookie } from 'helpers/cookies';
 
 function useLogin() {
   const [error] = useState(null);
@@ -38,8 +39,8 @@ function useLogin() {
 
       if (res?.status === 200) {
         const { jwt } = await res.json();
-        const verify = new jwtVerification(jwt).isValid;
-        console.log(verify);
+        // const verify = new jwtVerification(jwt).isValid;
+        setCookie('PLAZMEDIA_TOKEN', jwt);
         setLoggedMethod(true);
         router.push('/');
       } else {

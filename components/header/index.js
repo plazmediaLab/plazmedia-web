@@ -5,20 +5,29 @@ import { useContext, useState } from 'react';
 import NavMenu from './nav-menu';
 import CircleButtons from './circle-buttons';
 import ReactDOM from 'react-dom';
+import NavLoggedMenu from './nav-logged-menu';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   const appContext = useContext(AppContext);
-  const { darkMode, setDarkModeMethod } = appContext;
+  const { darkMode, logged, setDarkModeMethod } = appContext;
 
   const handleToggleMenu = () => {
     const toggleMenu = document.getElementById('toggle-menu');
-    if (!toggleMenu.classList.contains('open')) {
-      toggleMenu.classList.add('open');
+    const toggleLoggedMenu = document.getElementById('toggle-logged-menu');
+    if (!toggleMenu?.classList.contains('open')) {
+      toggleMenu?.classList.add('open');
       setOpen(true);
     } else {
-      toggleMenu.classList.remove('open');
+      toggleMenu?.classList.remove('open');
+      setOpen(false);
+    }
+    if (!toggleLoggedMenu?.classList.contains('open')) {
+      toggleLoggedMenu?.classList.add('open');
+      setOpen(true);
+    } else {
+      toggleLoggedMenu?.classList.remove('open');
       setOpen(false);
     }
   };
@@ -37,12 +46,21 @@ export default function Header() {
           handleToggleMenu={handleToggleMenu}
           className="flex gap-x-3 items-center justify-self-end md:hidden"
         />
-        <NavMenu
-          id="toggle-menu"
-          darkMode={darkMode}
-          setDarkModeMethod={setDarkModeMethod}
-          className="toggle-menu hidden w-full md:w-auto col-span-2 md:col-span-1 justify-self-start md:justify-self-end md:flex items-center gap-x-3 flex-col md:flex-row gap-y-3 md:gap-y-0"
-        />
+        {!logged ? (
+          <NavMenu
+            id="toggle-menu"
+            darkMode={darkMode}
+            setDarkModeMethod={setDarkModeMethod}
+            className="toggle-menu hidden w-full md:w-auto col-span-2 md:col-span-1 justify-self-start md:justify-self-end md:flex items-center gap-x-3 flex-col md:flex-row gap-y-3 md:gap-y-0"
+          />
+        ) : (
+          <NavLoggedMenu
+            id="toggle-logged-menu"
+            darkMode={darkMode}
+            setDarkModeMethod={setDarkModeMethod}
+            className="toggle-logged-menu hidden w-full md:w-auto col-span-2 md:col-span-1 justify-self-start md:justify-self-end md:flex items-center gap-x-3 flex-col md:flex-row gap-y-3 md:gap-y-0"
+          />
+        )}
         {open &&
           ReactDOM.createPortal(
             <button
