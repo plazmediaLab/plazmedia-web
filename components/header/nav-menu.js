@@ -1,9 +1,21 @@
 import Link from 'next/link';
 import CircleButtons from './circle-buttons';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
-export default function NavMenu({ darkMode, ...props }) {
+export default function NavMenu({ ...props }) {
+  const [dark, setDark] = useState(null);
   const router = useRouter();
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      setDark(theme);
+    } else {
+      setDark(null);
+    }
+  }, [theme]);
 
   return (
     <nav {...props}>
@@ -51,8 +63,8 @@ export default function NavMenu({ darkMode, ...props }) {
           display: block;
           width: 4px;
           height: 4px;
-          background-color: ${darkMode ? '#2dd4bf' : '#7000f8'};
-          opacity: ${darkMode ? '0.5' : '0.2'};
+          background-color: ${dark ? '#2DD4BF' : '#7000F8'};
+          opacity: ${dark ? '0.5' : '0.2'};
           position: absolute;
           bottom: calc(50% - 0.2rem);
           left: calc(100% - 1rem);

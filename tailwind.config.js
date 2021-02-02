@@ -34,6 +34,7 @@ module.exports = {
         amber: colors.amber,
         lime: colors.lime,
         teal: colors.teal,
+        logo: '#1d1d1b',
         brand: {
           50: '#f8f2ff',
           100: '#f1e6fe',
@@ -67,7 +68,8 @@ module.exports = {
       boxShadow: ['dark'],
       opacity: ['disabled'],
       borderOpacity: ['dark'],
-      transitionProperty: ['hover', 'focus']
+      transitionProperty: ['hover', 'focus'],
+      display: ['dark']
       // borderWidth: ['dark'],
     }
   },

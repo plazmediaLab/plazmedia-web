@@ -1,19 +1,12 @@
 import Logo from 'components/resources/logo';
-import AppContext from 'context/AppContext/AppContext';
 import Link from 'next/link';
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 import NavMenu from './nav-menu';
 import CircleButtons from './circle-buttons';
 import ReactDOM from 'react-dom';
-import { useTheme } from 'next-themes';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-
-  const appContext = useContext(AppContext);
-  const { darkMode, setDarkModeMethod } = appContext;
-
-  const { theme } = useTheme();
 
   const handleToggleMenu = () => {
     const toggleMenu = document.getElementById('toggle-menu');
@@ -25,12 +18,6 @@ export default function Header() {
       setOpen(false);
     }
   };
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      setDarkModeMethod(true);
-    }
-  }, []);
 
   return (
     <header className="fixed top-0 z-50 border-b border-blueGray-200 dark:border-blueGray-800 w-full grid place-items-center bg-white dark:bg-background-middle shadow-light-header md:shadow-none dark:shadow-dark-header md:dark:shadow-none">
@@ -48,7 +35,6 @@ export default function Header() {
         />
         <NavMenu
           id="toggle-menu"
-          darkMode={darkMode}
           className="toggle-menu hidden w-full md:w-auto col-span-2 md:col-span-1 justify-self-start md:justify-self-end md:flex items-center gap-x-3 flex-col md:flex-row gap-y-3 md:gap-y-0"
         />
         {open &&
