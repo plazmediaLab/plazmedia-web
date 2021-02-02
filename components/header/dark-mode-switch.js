@@ -1,28 +1,26 @@
 import AppContext from 'context/AppContext/AppContext';
-import { setCookie } from 'helpers/cookies';
 import { useContext } from 'react';
+import { useTheme } from 'next-themes';
 
 export default function DarkModeSwitch() {
   const appContext = useContext(AppContext);
   const { darkMode, setDarkModeMethod } = appContext;
 
-  const setTheme = () => {
-    if (!darkMode) {
-      document.querySelector('html').classList.add('dark');
-      localStorage.theme = 'dark';
+  const { theme, setTheme } = useTheme();
+
+  const handleThemeMode = () => {
+    if (theme === 'light') {
+      setTheme('dark');
       setDarkModeMethod(true);
-      setCookie('PLAZMEDIA_THEME', { theme: 'dark' });
     } else {
-      document.querySelector('html').classList.remove('dark');
-      localStorage.theme = 'light';
+      setTheme('light');
       setDarkModeMethod(false);
-      setCookie('PLAZMEDIA_THEME', { theme: 'light' });
     }
   };
 
   return (
     <button
-      onClick={setTheme}
+      onClick={handleThemeMode}
       title="Activar modo oscuro"
       className="w-8 h-8 grid place-items-center bg-blueGray-100 rounded-full text-blueGray-500 hover:bg-blueGray-200 dark:bg-blueGray-700">
       {darkMode ? (

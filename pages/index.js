@@ -1,19 +1,7 @@
 import Layout from 'components/layout';
 import HomeMainContent from 'components/home';
-import { getCookieJson } from 'helpers/cookies';
-import AppContext from 'context/AppContext/AppContext';
-import { useContext, useEffect } from 'react';
 
-function Home({ theme }) {
-  const appContext = useContext(AppContext);
-  const { setThemeMethod } = appContext;
-
-  useEffect(() => {
-    if (theme?.theme) {
-      setThemeMethod(theme?.theme);
-    }
-  }, []);
-
+function Home() {
   return (
     <Layout>
       <HomeMainContent />
@@ -30,10 +18,5 @@ function Home({ theme }) {
 //     props: {}
 //   };
 // }
-
-Home.getInitialProps = async (ctx) => {
-  const theme = await getCookieJson('PLAZMEDIA_THEME', ctx?.req);
-  return { theme };
-};
 
 export default Home;

@@ -41,7 +41,7 @@ const skills = [
 ];
 
 function useGetSkills() {
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const appContext = useContext(AppContext);

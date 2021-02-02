@@ -1,4 +1,4 @@
-import { DARK_MODE, SET_ONLINE, SET_SKILLS, SET_LOGGED, SET_USER, SET_THEME } from 'context/types';
+import { DARK_MODE, SET_ONLINE, SET_SKILLS, SET_THEME } from 'context/types';
 import { useReducer } from 'react';
 import AppContext from './AppContext';
 import AppReducer from './AppReducer';
@@ -9,8 +9,6 @@ const AppStore = ({ children }) => {
     darkMode: false,
     online: false,
     skills: [],
-    logged: null,
-    user: null,
     theme: null
   };
 
@@ -35,18 +33,6 @@ const AppStore = ({ children }) => {
       payload: data
     });
   };
-  const setLoggedMethod = (status) => {
-    dispatch({
-      type: SET_LOGGED,
-      payload: status
-    });
-  };
-  const setUserMethod = (data) => {
-    dispatch({
-      type: SET_USER,
-      payload: data
-    });
-  };
   const setThemeMethod = (theme) => {
     dispatch({
       type: SET_THEME,
@@ -61,15 +47,11 @@ const AppStore = ({ children }) => {
         darkMode: state.darkMode,
         online: state.online,
         skills: state.skills,
-        logged: state.logged,
-        user: state.user,
         theme: state.theme,
         // Methods
         setDarkModeMethod,
         setOnlineMethod,
         setSkillsMethod,
-        setLoggedMethod,
-        setUserMethod,
         setThemeMethod
       }}>
       {children}

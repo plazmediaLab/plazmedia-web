@@ -1,21 +1,9 @@
 import Link from 'next/link';
-import { useEffect } from 'react';
 import CircleButtons from './circle-buttons';
 import { useRouter } from 'next/router';
-import LineButton from 'components/resources/line-button';
 
-export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
+export default function NavMenu({ darkMode, ...props }) {
   const router = useRouter();
-
-  useEffect(() => {
-    if (process.browser) {
-      let theme = localStorage.theme;
-      if (theme === 'dark') {
-        document.querySelector('html').classList.add('dark');
-        setDarkModeMethod(true);
-      }
-    }
-  }, []);
 
   return (
     <nav {...props}>
@@ -50,7 +38,6 @@ export default function NavMenu({ darkMode, setDarkModeMethod, ...props }) {
           Sobre Plazmedia
         </a>
       </Link>
-      <LineButton onClick={() => router.push('/login')}>Iniciar sesión</LineButton>
       <CircleButtons className="md:flex gap-x-3 items-center justify-self-end hidden" />
       <style jsx>{`
         nav.toggle-menu {
