@@ -1,4 +1,4 @@
-import { DARK_MODE, SET_LOGGED, SET_ONLINE, SET_SKILLS, SET_USER } from 'context/types';
+import { DARK_MODE, SET_LOGGED, SET_ONLINE, SET_SKILLS, SET_THEME, SET_USER } from 'context/types';
 
 export default function AppReducer(state, action) {
   switch (action.type) {
@@ -26,6 +26,11 @@ export default function AppReducer(state, action) {
       return {
         ...state,
         user: action.payload
+      };
+    case SET_THEME:
+      return {
+        ...state,
+        theme: action.payload
       };
 
     default:

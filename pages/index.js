@@ -1,7 +1,19 @@
 import Layout from 'components/layout';
 import HomeMainContent from 'components/home';
+import { getCookieJson } from 'helpers/cookies';
+import AppContext from 'context/AppContext/AppContext';
+import { useContext, useEffect } from 'react';
 
-function Home() {
+function Home({ theme }) {
+  const appContext = useContext(AppContext);
+  const { setThemeMethod } = appContext;
+
+  useEffect(() => {
+    if (theme?.theme) {
+      setThemeMethod(theme?.theme);
+    }
+  }, []);
+
   return (
     <Layout>
       <HomeMainContent />
@@ -9,18 +21,19 @@ function Home() {
   );
 }
 
-// export async function getStaticProps() {
-//   console.log('');
-//   const res = await fetch(
-//     `${process.env.PRODUCTION ? process.env.PROD_API_HOST : process.env.LOCAL_API_HOST}/skills`
-//   );
-//   const json = await res.json();
+// export async function getStaticProps(ctx) {
+//   console.log(ctx);
+//   // const cookies = await getCookie('PLAZMEDIA_THEME', ctx);
+//   // console.log(cookies);
 
 //   return {
-//     props: {
-//       skills: json
-//     }
+//     props: {}
 //   };
 // }
+
+Home.getInitialProps = async (ctx) => {
+  const theme = await getCookieJson('PLAZMEDIA_THEME', ctx?.req);
+  return { theme };
+};
 
 export default Home;

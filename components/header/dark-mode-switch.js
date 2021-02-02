@@ -1,4 +1,5 @@
 import AppContext from 'context/AppContext/AppContext';
+import { setCookie } from 'helpers/cookies';
 import { useContext } from 'react';
 
 export default function DarkModeSwitch() {
@@ -10,10 +11,12 @@ export default function DarkModeSwitch() {
       document.querySelector('html').classList.add('dark');
       localStorage.theme = 'dark';
       setDarkModeMethod(true);
+      setCookie('PLAZMEDIA_THEME', { theme: 'dark' });
     } else {
       document.querySelector('html').classList.remove('dark');
       localStorage.theme = 'light';
       setDarkModeMethod(false);
+      setCookie('PLAZMEDIA_THEME', { theme: 'light' });
     }
   };
 

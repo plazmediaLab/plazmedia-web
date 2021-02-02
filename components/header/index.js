@@ -1,7 +1,7 @@
 import Logo from 'components/resources/logo';
 import AppContext from 'context/AppContext/AppContext';
 import Link from 'next/link';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import NavMenu from './nav-menu';
 import CircleButtons from './circle-buttons';
 import ReactDOM from 'react-dom';
@@ -11,7 +11,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   const appContext = useContext(AppContext);
-  const { darkMode, logged, setDarkModeMethod } = appContext;
+  const { darkMode, logged, theme, setDarkModeMethod } = appContext;
 
   const handleToggleMenu = () => {
     const toggleMenu = document.getElementById('toggle-menu');
@@ -31,6 +31,13 @@ export default function Header() {
       setOpen(false);
     }
   };
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.querySelector('html').classList.add('dark');
+      setDarkModeMethod(true);
+    }
+  }, [theme]);
 
   return (
     <header className="fixed top-0 z-50 border-b border-blueGray-200 dark:border-blueGray-800 w-full grid place-items-center bg-white dark:bg-background-middle shadow-light-header md:shadow-none dark:shadow-dark-header md:dark:shadow-none">
