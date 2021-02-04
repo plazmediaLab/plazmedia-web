@@ -41,7 +41,7 @@ export default function MainHomeSkills() {
           <SkeletonLoading />
         ) : (
           frontend?.skills?.map((item) => (
-            <li className="tag-list-item" key={item?.id}>
+            <li className="tag-list-item" key={item?.id + item?.name}>
               {item?.name}
             </li>
           ))
@@ -66,7 +66,7 @@ export default function MainHomeSkills() {
           <SkeletonLoading />
         ) : (
           backend?.skills?.map((item) => (
-            <li className="tag-list-item" key={item?.id}>
+            <li className="tag-list-item" key={item?.id + item?.name}>
               {item?.name}
             </li>
           ))
@@ -91,7 +91,7 @@ export default function MainHomeSkills() {
           <SkeletonLoading nItems={5} />
         ) : (
           graphic_design?.skills?.map((item) => (
-            <li className="tag-list-item" key={item?.id}>
+            <li className="tag-list-item" key={item?.id + item?.name}>
               {item?.name}
             </li>
           ))

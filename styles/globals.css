@@ -14,6 +14,10 @@ button:active {
   -webkit-box-shadow: none;
 }
 
+.skeleton-pulse {
+  @apply bg-blueGray-200 dark:bg-blueGray-700 animate-pulse
+}
+
 .tag-list-item {
   @apply py-small px-3 rounded-full bg-blueGray-200 text-blueGray-500 dark:bg-blueGray-800
 }

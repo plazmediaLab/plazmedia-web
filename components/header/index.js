@@ -1,12 +1,15 @@
 import Logo from 'components/resources/logo';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NavMenu from './nav-menu';
 import CircleButtons from './circle-buttons';
 import ReactDOM from 'react-dom';
+import useGetPerfilData from 'hooks/useGetPerfilData';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
+  const [getPerfilData] = useGetPerfilData();
 
   const handleToggleMenu = () => {
     const toggleMenu = document.getElementById('toggle-menu');
@@ -18,6 +21,10 @@ export default function Header() {
       setOpen(false);
     }
   };
+
+  useEffect(() => {
+    getPerfilData();
+  }, []);
 
   return (
     <header className="fixed top-0 z-50 border-b border-blueGray-200 dark:border-blueGray-800 w-full grid place-items-center bg-white dark:bg-background-middle shadow-light-header md:shadow-none dark:shadow-dark-header md:dark:shadow-none">

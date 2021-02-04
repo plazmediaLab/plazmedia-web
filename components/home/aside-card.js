@@ -1,17 +1,27 @@
 import MainButton from 'components/resources/main-button';
 import SecondaryButton from 'components/resources/secondary-button';
+import AppContext from 'context/AppContext/AppContext';
+import { useContext } from 'react';
 import AsideCardAvatar from './aside-card__avatar';
 import AsideCardBiography from './aside-card__biography';
 import Languages from './aside-card__languages';
 import AsideCardSocialNetwork from './aside-card__social-network';
 
 export default function Asidecard({ ...props }) {
+  const appContext = useContext(AppContext);
+  const { loading, perfil } = appContext;
+
   return (
     <aside>
       <article {...props}>
-        <AsideCardAvatar />
+        <AsideCardAvatar
+          avatarURL={perfil?.avatar?.thumbnail}
+          name={perfil?.name}
+          address={perfil?.address}
+          title={perfil?.title}
+        />
         <span className="grid gap-3 grid-cols-2">
-          <SecondaryButton type="button">
+          <MainButton type="button">
             <svg
               className="w-5 h-5 min-w-5 min-h-5 inline-block mr-1"
               fill="currentColor"
@@ -24,8 +34,8 @@ export default function Asidecard({ ...props }) {
               />
             </svg>{' '}
             Descargar CV
-          </SecondaryButton>
-          <MainButton type="button">
+          </MainButton>
+          <SecondaryButton type="button">
             <svg
               className="w-5 h-5 inline-block mr-2"
               fill="currentColor"
@@ -35,10 +45,14 @@ export default function Asidecard({ ...props }) {
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
             </svg>
             Contactar
-          </MainButton>
+          </SecondaryButton>
         </span>
-        <Languages className="text-sm tracking-wide text-blueGray-400" />
-        <AsideCardBiography />
+        <Languages
+          loading={loading}
+          languages={perfil?.languages}
+          className="text-sm tracking-wide text-blueGray-400"
+        />
+        <AsideCardBiography loading={loading} about_me={perfil?.about_me} />
         <AsideCardSocialNetwork />
       </article>
     </aside>
