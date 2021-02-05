@@ -17,6 +17,19 @@ function useGetPerfilData() {
           small: `https://plazmedia-web-strapi.herokuapp.com${data?.avatar.formats.small.url}`
         };
 
+        let skills = [];
+        data?.skills_categories.map((item) => {
+          fetch(`https://plazmedia-web-strapi.herokuapp.com/skills-categories/${item?.id}`)
+            .then((res) => res.json())
+            .then((json) => {
+              skills.push({
+                id: json?.id,
+                title: json?.title,
+                skills: json?.skills
+              });
+            });
+        });
+
         let languages = [];
         data?.languages.map((item) => {
           const id = item?.id;
@@ -27,11 +40,12 @@ function useGetPerfilData() {
 
         const info = {
           about_me: data?.about_me,
-          title: data?.title,
           address: data?.address,
+          avatar,
           languages,
           name: data?.name,
-          avatar
+          skills,
+          title: data?.title
         };
 
         setPerfilMethod(info);

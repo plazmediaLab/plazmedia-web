@@ -19,9 +19,24 @@ button:active {
 }
 
 .tag-list-item {
-  @apply py-small px-3 rounded-full bg-blueGray-200 text-blueGray-500 dark:bg-blueGray-800
+  @apply py-small px-2 rounded-full bg-blueGray-200 text-blueGray-500 dark:bg-blueGray-800 text-xs
 }
 
+.test-8 {
+  @apply w-8  
+}
+.test-10 {
+  @apply w-10  
+}
+.test-12 {
+  @apply w-12  
+}
+.test-14 {
+  @apply w-14  
+}
+.test-16 {
+  @apply w-16
+}
 .test-1 {
   @apply w-18  
 }

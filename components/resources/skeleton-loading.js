@@ -1,4 +1,4 @@
-export default function SkeletonLoading({ nItems = 10, itemHeight = '1rem', direction = 'row' }) {
+export default function SkeletonLoading({ nItems = 10, itemHeight = '1rem' }) {
   let stars = [];
 
   function random(min, max) {
@@ -8,15 +8,6 @@ export default function SkeletonLoading({ nItems = 10, itemHeight = '1rem', dire
       return `w-${random + 1}`;
     } else {
       return `w-${random}`;
-    }
-  }
-
-  function directionOrder() {
-    switch (direction) {
-      case 'row':
-        return 'row';
-      case 'col':
-        return 'column';
     }
   }
 
@@ -33,9 +24,7 @@ export default function SkeletonLoading({ nItems = 10, itemHeight = '1rem', dire
 
   for (let i = 0; i < nItems; ++i) {
     stars.push(
-      <span
-        className={`${random(12, 40)} bg-blueGray-200 dark:bg-blueGray-800 rounded-full`}
-        key={i}>
+      <span className={`${random(8, 40)} skeleton-pulse rounded-full`} key={i}>
         <style jsx>{`
           span {
             display: block;
@@ -59,11 +48,10 @@ export default function SkeletonLoading({ nItems = 10, itemHeight = '1rem', dire
   }
 
   return (
-    <div className="flex gap-2 flex-wrap w-full">
+    <div className="flex gap-2 flex-wrap w-full mb-3">
       {stars}
       <style jsx>{`
         div {
-          flex-direction: ${directionOrder()};
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
           animation-delay: 0s;
         }

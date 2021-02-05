@@ -1,5 +1,4 @@
 import AppContext from 'context/AppContext/AppContext';
-import MainHomeSkills from './main-home__skills';
 import { useContext } from 'react';
 
 export default function MainHome() {
@@ -8,7 +7,6 @@ export default function MainHome() {
 
   return (
     <main>
-      <MainHomeSkills />
       <button
         type="button"
         onClick={setOnlineMethod}

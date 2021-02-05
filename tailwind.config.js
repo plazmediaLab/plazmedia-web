@@ -5,6 +5,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      transitionDuration: {
+        50: '50ms'
+      },
       padding: {
         small: '0.1rem'
       },

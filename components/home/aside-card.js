@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import AsideCardAvatar from './aside-card__avatar';
 import AsideCardBiography from './aside-card__biography';
 import Languages from './aside-card__languages';
+import AsideCardSkills from './aside-card__skills';
 import AsideCardSocialNetwork from './aside-card__social-network';
 
 export default function Asidecard({ ...props }) {
@@ -53,6 +54,7 @@ export default function Asidecard({ ...props }) {
           className="text-sm tracking-wide text-blueGray-400"
         />
         <AsideCardBiography loading={loading} about_me={perfil?.about_me} />
+        <AsideCardSkills loading={loading} skills={perfil?.skills} />
         <AsideCardSocialNetwork />
       </article>
     </aside>
