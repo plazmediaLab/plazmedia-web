@@ -9,7 +9,7 @@ function useGetPerfilData() {
     fetch('https://plazmedia-web-strapi.herokuapp.com/profiles/6018713c4b7ade373c92d174')
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         const avatar = {
           thumbnail: `https://plazmedia-web-strapi.herokuapp.com${data?.avatar.formats.thumbnail.url}`,
           large: `https://plazmedia-web-strapi.herokuapp.com${data?.avatar.formats.large.url}`,
@@ -42,7 +42,9 @@ function useGetPerfilData() {
         const info = {
           about_me: data?.about_me,
           address: data?.address,
-          avatar,
+          avatar: {
+            thumbnail: data?.avatar_thumbnail
+          },
           languages,
           name: data?.name,
           title: data?.title
