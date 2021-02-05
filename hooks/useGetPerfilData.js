@@ -3,7 +3,7 @@ import { useContext } from 'react';
 
 function useGetPerfilData() {
   const appContext = useContext(AppContext);
-  const { setPerfilMethod, setLoadingMethod } = appContext;
+  const { setPerfilMethod, setLoadingMethod, setSkillsMethod } = appContext;
 
   const getPerfilData = () => {
     fetch('https://plazmedia-web-strapi.herokuapp.com/profiles/6018713c4b7ade373c92d174')
@@ -17,18 +17,19 @@ function useGetPerfilData() {
           small: `https://plazmedia-web-strapi.herokuapp.com${data?.avatar.formats.small.url}`
         };
 
-        let skills = [];
+        let skills = {};
         data?.skills_categories.map((item) => {
-          fetch(`https://plazmedia-web-strapi.herokuapp.com/skills-categories/${item?.id}`)
-            .then((res) => res.json())
-            .then((json) => {
-              skills.push({
-                id: json?.id,
-                title: json?.title,
-                skills: json?.skills
-              });
-            });
+          // fetch(`https://plazmedia-web-strapi.herokuapp.com/skills-categories/${item?.id}`)
+          //   .then((res) => res.json())
+          //   .then((json) => {
+          //   });
+          skills = {
+            ...skills,
+            [item?.title === 'graphic-design' ? 'graphic_design' : item?.title]: item?.id
+          };
         });
+
+        setSkillsMethod(skills);
 
         let languages = [];
         data?.languages.map((item) => {
@@ -44,7 +45,6 @@ function useGetPerfilData() {
           avatar,
           languages,
           name: data?.name,
-          skills,
           title: data?.title
         };
 

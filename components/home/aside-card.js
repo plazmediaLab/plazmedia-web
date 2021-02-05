@@ -54,7 +54,7 @@ export default function Asidecard({ ...props }) {
           className="text-sm tracking-wide text-blueGray-400"
         />
         <AsideCardBiography loading={loading} about_me={perfil?.about_me} />
-        <AsideCardSkills loading={loading} skills={perfil?.skills} />
+        <AsideCardSkills loading={loading} />
         <AsideCardSocialNetwork />
       </article>
     </aside>
