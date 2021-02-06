@@ -1,7 +1,6 @@
 export default function Languages({ loading, languages, ...props }) {
   return (
     <section {...props}>
-      <hr className="border-blueGray-200 my-5 dark:border-blueGray-700 dark:border-opacity-60" />
       <h2 className="text-lg font-medium text-center md:text-left mb-2">Idiomas</h2>
       {loading ? (
         <div className="skeleton-pulse w-full h-9 overflow-hidden rounded mx-auto mb-1" />

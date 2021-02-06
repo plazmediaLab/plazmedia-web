@@ -5,19 +5,17 @@ import AsideCardSkillItem from './aside-card__skill_item';
 
 export default function AsideCardSkills({ loading }) {
   const appContext = useContext(AppContext);
-  const { skills } = appContext;
+  const { perfil } = appContext;
 
   return (
-    <article className="text-blueGray-400 text-sm leading-5 hidden md:block">
+    <article className="text-blueGray-400 text-sm leading-5 mb-14 md:mb-0">
       <hr className="border-blueGray-200 my-5 dark:border-blueGray-700 dark:border-opacity-60" />
-      <h2 className="text-lg font-medium text-center md:text-left mb-2">
-        Conocimientos técnicos y habilidades
-      </h2>
+      <h2 className="text-lg font-medium text-center md:text-left mb-2">Herramientas</h2>
       {loading ? (
         <SkeletonLoading nItems={20} itemHeight="0.8rem" />
       ) : (
         <>
-          <AsideCardSkillItem title="Desarrollo FrontEnd" id={skills.frontend}>
+          <AsideCardSkillItem title="FrontEnd" skills={perfil?.skills_categories?.frontend}>
             <svg
               className="w-4 h-4 inline-block mr-3"
               fill="currentColor"
@@ -33,7 +31,7 @@ export default function AsideCardSkills({ loading }) {
           <AsideCardSkillItem
             title="BackEnd & DB"
             subtitle="Non-Relational Database"
-            id={skills.backend}>
+            skills={perfil?.skills_categories?.backend}>
             <svg
               className="w-4 h-4 inline-block mr-3"
               fill="currentColor"
@@ -46,7 +44,9 @@ export default function AsideCardSkills({ loading }) {
               />
             </svg>
           </AsideCardSkillItem>
-          <AsideCardSkillItem title="Diseño gráfico & UI" id={skills.graphic_design}>
+          <AsideCardSkillItem
+            title="Diseño gráfico & UI"
+            skills={perfil?.skills_categories?.graphic_design}>
             <svg
               className="w-4 h-4 inline-block mr-3"
               fill="currentColor"

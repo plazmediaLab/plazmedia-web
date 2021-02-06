@@ -10,7 +10,7 @@ export default function AsideCardAvatar({ avatarURL, name, address, title }) {
         {loading ? (
           <div className="skeleton-pulse relative w-36 h-36 overflow-hidden rounded-full mx-auto" />
         ) : (
-          <div className="relative w-36 h-36 overflow-hidden rounded-full">
+          <div className="relative w-36 h-36 overflow-hidden rounded-full bg-blueGray-200 dark:bg-blueGray-700">
             <img className="bg-cover bg-no-repeat" src={avatarURL} alt="Perfil avatar" />
           </div>
         )}

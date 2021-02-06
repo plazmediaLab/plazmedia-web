@@ -8,7 +8,6 @@ const AppStore = ({ children }) => {
   const initialState = {
     perfil: null,
     online: false,
-    skills: [],
     theme: null,
     loading: true
   };
@@ -26,12 +25,6 @@ const AppStore = ({ children }) => {
   const setOnlineMethod = () => {
     dispatch({
       type: SET_ONLINE
-    });
-  };
-  const setSkillsMethod = (data) => {
-    dispatch({
-      type: SET_SKILLS,
-      payload: data
     });
   };
   const setThemeMethod = (theme) => {
@@ -53,13 +46,11 @@ const AppStore = ({ children }) => {
       value={{
         perfil: state.perfil,
         online: state.online,
-        skills: state.skills,
         theme: state.theme,
         loading: state.loading,
         // Methods
         setPerfilMethod,
         setOnlineMethod,
-        setSkillsMethod,
         setThemeMethod,
         setLoadingMethod
       }}>

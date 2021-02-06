@@ -26,7 +26,8 @@ module.exports = {
         5: '1.25rem'
       },
       minHeight: {
-        5: '1.25rem'
+        5: '1.25rem',
+        9: '2.25rem'
       },
       boxShadow: {
         'dark-header': '0px 2px 7px 0px rgba(0,0,0,0.6)',
