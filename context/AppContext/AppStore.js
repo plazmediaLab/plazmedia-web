@@ -6,7 +6,7 @@ import AppReducer from './AppReducer';
 const AppStore = ({ children }) => {
   // Initial state
   const initialState = {
-    perfil: {},
+    perfil: null,
     online: false,
     skills: [],
     theme: null,

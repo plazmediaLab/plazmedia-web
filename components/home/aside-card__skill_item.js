@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 export default function AsideCardSkillItem({ skills, title, subtitle, children, id }) {
   const [itemsList, setItemsList] = useState([]);
 
-  console.log(id);
   // useEffect(() => {
   //   if (process.browser) {
   //     fetch(`https://plazmedia-web-strapi.herokuapp.com/skills-categories/${id}`)

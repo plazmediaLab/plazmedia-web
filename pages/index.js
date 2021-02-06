@@ -2,10 +2,22 @@ import Layout from 'components/layout';
 import HomeMainContent from 'components/home';
 import useSWR from 'swr';
 import fetcher from 'helpers/fetcher';
+import AppContext from 'context/AppContext/AppContext';
+import { useContext, useEffect } from 'react';
 
 function Home() {
   const { data, error } = useSWR('/api/profile', fetcher);
-  console.log(data);
+
+  const appContext = useContext(AppContext);
+  const { perfil, setPerfilMethod, setLoadingMethod } = appContext;
+
+  useEffect(() => {
+    if (!perfil && !error) {
+      setPerfilMethod(data);
+      setLoadingMethod(false);
+    }
+  }, [data]);
+
   return (
     <Layout>
       <HomeMainContent />

@@ -3,7 +3,6 @@ import SecondaryButton from 'components/resources/secondary-button';
 import AppContext from 'context/AppContext/AppContext';
 import { useContext } from 'react';
 import AsideCardAvatar from './aside-card__avatar';
-import AsideCardBiography from './aside-card__biography';
 import Languages from './aside-card__languages';
 import AsideCardSkills from './aside-card__skills';
 import AsideCardSocialNetwork from './aside-card__social-network';
@@ -53,7 +52,6 @@ export default function Asidecard({ ...props }) {
           languages={perfil?.languages}
           className="text-sm tracking-wide text-blueGray-400"
         />
-        <AsideCardBiography loading={loading} about_me={perfil?.about_me} />
         <AsideCardSkills loading={loading} />
         <AsideCardSocialNetwork />
       </article>
