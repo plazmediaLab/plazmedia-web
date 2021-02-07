@@ -12,11 +12,6 @@ export default function AppReducer(state, action) {
         ...state,
         online: !state.online
       };
-    case SET_SKILLS:
-      return {
-        ...state,
-        skills: action.payload
-      };
     case SET_THEME:
       return {
         ...state,

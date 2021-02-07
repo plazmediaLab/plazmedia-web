@@ -19,7 +19,9 @@ export default function profile(req, res) {
       frontend: [
         { id: 1, title: 'React' },
         { id: 2, title: 'Next Js' },
-        { id: 3, title: 'Gatsby Js' }
+        { id: 3, title: 'Gatsby Js' },
+        { id: 4, title: 'Tailwind CSS' },
+        { id: 5, title: 'Styled Components' }
       ],
       backend: [
         { id: 1, title: 'Node Js' },
