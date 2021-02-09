@@ -13,6 +13,15 @@ button:active {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
 }
+svg.icon-projects {
+  max-width: 3rem;
+  max-height: 3rem;
+  fill: #475569;
+  display: inline-block;
+}
+html.dark svg.icon-projects {
+  fill: #475569;
+}
 
 .skeleton-pulse {
   @apply bg-blueGray-200 dark:bg-blueGray-700 animate-pulse

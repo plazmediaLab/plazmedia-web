@@ -10,7 +10,9 @@
     "format": "prettier --write './**/*.{js,jsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
+    "highlight.js": "^10.6.0",
     "html-react-parser": "^1.2.4",
+    "marked": "^2.0.0",
     "next": "10.0.5",
     "next-themes": "^0.0.10",
     "react": "17.0.1",
