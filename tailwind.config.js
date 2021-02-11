@@ -70,7 +70,7 @@ module.exports = {
       backgroundOpacity: ['dark'],
       fontWeight: ['dark'],
       boxShadow: ['dark'],
-      opacity: ['disabled'],
+      opacity: ['disabled', 'dark'],
       borderOpacity: ['dark'],
       transitionProperty: ['hover', 'focus'],
       display: ['dark']

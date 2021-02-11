@@ -13,14 +13,9 @@ button:active {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
 }
-svg.icon-projects {
-  max-width: 3rem;
-  max-height: 3rem;
-  fill: #475569;
-  display: inline-block;
-}
-html.dark svg.icon-projects {
-  fill: #475569;
+
+div.stack-project-icon {
+  @apply text-font-secondary dark:text-font-placeholder w-5 h-5 min-h-5 min-w-5
 }
 
 .skeleton-pulse {
