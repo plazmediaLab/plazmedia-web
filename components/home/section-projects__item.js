@@ -8,7 +8,6 @@ import ReactIcon from 'components/resources/icons/react-icon';
 import StrapiIcon from 'components/resources/icons/strapi-icon';
 import TailwimdIcon from 'components/resources/icons/tailwind-icon';
 import ElectronIcons from 'components/resources/icons/elctron-icon';
-import Link from 'next/link';
 import JsonWebTokenIcon from 'components/resources/icons/json-web-token-icon';
 import { useRouter } from 'next/router';
 
@@ -16,7 +15,6 @@ export default function SectionProjectsItem({ item }) {
   const router = useRouter();
 
   const icons = [];
-  console.log(icons.length);
 
   for (let i = 0; i < item?.stack?.length; ++i) {
     switch (item?.stack[i]) {
@@ -57,7 +55,7 @@ export default function SectionProjectsItem({ item }) {
   }
 
   return (
-    <div className="p-3 rounded-md overflow-hidden relative border border-blueGray-200">
+    <div className="p-3 rounded-md overflow-hidden relative border border-blueGray-200 dark:border-blueGray-900">
       <button
         onClick={() => router.push(`/project/${item?.repo_slug}`)}
         className="projects-item cursor-pointer background hover:opacity-100 absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat bg-center transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
@@ -78,14 +76,22 @@ export default function SectionProjectsItem({ item }) {
           z-index: 10;
         }
         span.contain-title {
-          opacity: 0;
+          opacity: 0.9;
         }
-        button.projects-item:hover ~ span.contain-title {
-          opacity: 1;
+        span.icons-container {
+          opacity: 0.9;
         }
-        button.projects-item:hover ~ span.icons-container,
-        span.icons-container:hover {
-          opacity: 1;
+        @media (min-width: 768px) {
+          span.contain-title {
+            opacity: 0;
+          }
+          button.projects-item:hover ~ span.contain-title {
+            opacity: 1;
+          }
+          button.projects-item:hover ~ span.icons-container,
+          span.icons-container:hover {
+            opacity: 1;
+          }
         }
       `}</style>
     </div>

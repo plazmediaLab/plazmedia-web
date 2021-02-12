@@ -50,8 +50,8 @@ export default function SectionProjects() {
   return (
     <section>
       <h3 className="text-2xl font-medium mb-7">Mis proyectos destacados</h3>
-      <span className="grid grid-cols-2 md:grid-cols-3 gap-5">
-        {repos.map((item, index) => (
+      <span className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+        {repos.map((item) => (
           <SectionProjectsItem item={item} key={uuidv4()} />
         ))}
       </span>
