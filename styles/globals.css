@@ -15,7 +15,7 @@ button:active {
 }
 
 div.stack-project-icon {
-  @apply text-font-secondary dark:text-font-placeholder w-5 h-5 min-h-5 min-w-5
+  @apply text-font-secondary dark:text-font-placeholder
 }
 
 .skeleton-pulse {

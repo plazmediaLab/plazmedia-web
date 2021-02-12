@@ -5,6 +5,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      backgroundSize: {
+        '120%': '120%'
+      },
       transitionDuration: {
         50: '50ms'
       },
@@ -23,10 +26,14 @@ module.exports = {
         38: '9.5rem'
       },
       minWidth: {
-        5: '1.25rem'
+        5: '1.25rem',
+        7: '1.75rem',
+        8: '2rem'
       },
       minHeight: {
         5: '1.25rem',
+        7: '1.75rem',
+        8: '2rem',
         9: '2.25rem'
       },
       boxShadow: {
@@ -73,7 +80,8 @@ module.exports = {
       opacity: ['disabled', 'dark'],
       borderOpacity: ['dark'],
       transitionProperty: ['hover', 'focus'],
-      display: ['dark']
+      display: ['dark'],
+      backgroundSize: ['hover']
       // borderWidth: ['dark'],
     }
   },
