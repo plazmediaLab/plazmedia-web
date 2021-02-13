@@ -4,8 +4,7 @@ import { useContext } from 'react';
 import AsideCardSkillItem from './aside-card__skill_item';
 
 export default function AsideCardSkills({ loading }) {
-  const appContext = useContext(AppContext);
-  const { perfil } = appContext;
+  const { perfil } = useContext(AppContext);
 
   return (
     <article className="text-blueGray-400 text-sm leading-5 mb-14 md:mb-0">

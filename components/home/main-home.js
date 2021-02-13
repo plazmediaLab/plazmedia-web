@@ -5,8 +5,7 @@ import MainHomeHello from './main-home__hello';
 import SectionProjects from './section-projects';
 
 export default function MainHome() {
-  const appContext = useContext(AppContext);
-  const { perfil, loading, online, setOnlineMethod } = appContext;
+  const { perfil, loading, online, setOnlineMethod } = useContext(AppContext);
 
   return (
     <main>

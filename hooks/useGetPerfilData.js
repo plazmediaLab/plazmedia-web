@@ -2,8 +2,7 @@ import AppContext from 'context/AppContext/AppContext';
 import { useContext } from 'react';
 
 function useGetPerfilData() {
-  const appContext = useContext(AppContext);
-  const { setPerfilMethod, setLoadingMethod, setSkillsMethod } = appContext;
+  const { setPerfilMethod, setLoadingMethod, setSkillsMethod } = useContext(AppContext);
 
   const getPerfilData = () => {
     fetch('https://plazmedia-web-strapi.herokuapp.com/profiles/6018713c4b7ade373c92d174')

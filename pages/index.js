@@ -8,13 +8,12 @@ import { useContext, useEffect } from 'react';
 function Home() {
   const { data, error } = useSWR('/api/profile', fetcher);
 
-  const appContext = useContext(AppContext);
-  const { perfil, setPerfilMethod, setLoadingMethod } = appContext;
+  const { perfil, setPerfilMethod, setLoadingMethod } = useContext(AppContext);
 
   useEffect(() => {
     if (!perfil && !error) {
       setPerfilMethod(data);
-      setLoadingMethod(false);
+      // setLoadingMethod(false);
     }
   }, [data]);
 

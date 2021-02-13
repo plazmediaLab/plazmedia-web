@@ -2,8 +2,8 @@ import AppContext from 'context/AppContext/AppContext';
 import { useContext } from 'react';
 
 export default function AsideCardAvatar({ avatarURL, name, address, title }) {
-  const appContext = useContext(AppContext);
-  const { loading, online } = appContext;
+  const { loading, online } = useContext(AppContext);
+
   return (
     <>
       <section className="relative w-36 h-36 mx-auto">

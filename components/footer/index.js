@@ -4,8 +4,7 @@ import { useContext } from 'react';
 import SocialNetwork from './social-network';
 
 export default function Footer() {
-  const appContext = useContext(AppContext);
-  const { online } = appContext;
+  const { online } = useContext(AppContext);
 
   return (
     <footer

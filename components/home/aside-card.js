@@ -10,8 +10,7 @@ import AsideCardSocialNetwork from './aside-card__social-network';
 export default function Asidecard({ ...props }) {
   const [more, setMore] = useState(false);
 
-  const appContext = useContext(AppContext);
-  const { loading, perfil } = appContext;
+  const { loading, perfil } = useContext(AppContext);
 
   const showSection = () => {
     const section = document.getElementById('skills-section');

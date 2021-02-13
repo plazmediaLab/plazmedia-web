@@ -1,5 +1,7 @@
 import SectionProjectsItem from './section-projects__item';
 import { v4 as uuidv4 } from 'uuid';
+import AppContext from 'context/AppContext/AppContext';
+import { useContext } from 'react';
 
 export default function SectionProjects() {
   const repos = [
@@ -46,6 +48,9 @@ export default function SectionProjects() {
         'https://firebasestorage.googleapis.com/v0/b/platify-electron-28b95.appspot.com/o/screenshots%2Fthumbnail-alain-boutique-v1.png?alt=media&token=dd65c21a-ed59-4a2a-b117-cb667e22cb4d'
     }
   ];
+
+  const { loading, loadingProjects } = useContext(AppContext);
+  console.log(loading);
 
   return (
     <section>
