@@ -1,4 +1,11 @@
-import { SET_ONLINE, SET_SKILLS, SET_THEME, SET_LOADING, SET_PERFIL } from 'context/types';
+import {
+  SET_ONLINE,
+  SET_THEME,
+  SET_LOADING,
+  SET_PERFIL,
+  SET_LOADING_PROJECTS,
+  SET_PROJECTS
+} from 'context/types';
 
 export default function AppReducer(state, action) {
   switch (action.type) {
@@ -6,6 +13,11 @@ export default function AppReducer(state, action) {
       return {
         ...state,
         perfil: action.payload
+      };
+    case SET_PROJECTS:
+      return {
+        ...state,
+        projects: action.payload
       };
     case SET_ONLINE:
       return {
@@ -21,6 +33,11 @@ export default function AppReducer(state, action) {
       return {
         ...state,
         loading: action.payload
+      };
+    case SET_LOADING_PROJECTS:
+      return {
+        ...state,
+        loadingProjects: action.payload
       };
 
     default:

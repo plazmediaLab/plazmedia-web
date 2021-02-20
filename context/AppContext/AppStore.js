@@ -1,4 +1,11 @@
-import { SET_PERFIL, SET_ONLINE, SET_THEME, SET_LOADING } from 'context/types';
+import {
+  SET_PERFIL,
+  SET_PROJECTS,
+  SET_ONLINE,
+  SET_THEME,
+  SET_LOADING,
+  SET_LOADING_PROJECTS
+} from 'context/types';
 import { useReducer } from 'react';
 import AppContext from './AppContext';
 import AppReducer from './AppReducer';
@@ -7,9 +14,11 @@ const AppStore = ({ children }) => {
   // Initial state
   const initialState = {
     perfil: null,
+    projects: [],
     online: false,
     theme: null,
-    loading: true
+    loading: true,
+    loadingProjects: true
   };
 
   // Reducer
@@ -19,6 +28,12 @@ const AppStore = ({ children }) => {
   const setPerfilMethod = (data) => {
     dispatch({
       type: SET_PERFIL,
+      payload: data
+    });
+  };
+  const setProjectsMethod = (data) => {
+    dispatch({
+      type: SET_PROJECTS,
       payload: data
     });
   };
@@ -39,20 +54,30 @@ const AppStore = ({ children }) => {
       payload: state
     });
   };
+  const setLoadingProjectsMethod = (state) => {
+    dispatch({
+      type: SET_LOADING_PROJECTS,
+      payload: state
+    });
+  };
 
   // Provider
   return (
     <AppContext.Provider
       value={{
         perfil: state.perfil,
+        projects: state.projects,
         online: state.online,
         theme: state.theme,
         loading: state.loading,
+        loadingProjects: state.loadingProjects,
         // Methods
         setPerfilMethod,
+        setProjectsMethod,
         setOnlineMethod,
         setThemeMethod,
-        setLoadingMethod
+        setLoadingMethod,
+        setLoadingProjectsMethod
       }}>
       {children}
     </AppContext.Provider>

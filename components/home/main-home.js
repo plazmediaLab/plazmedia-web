@@ -31,7 +31,7 @@ export default function MainHome() {
           </button>
         </>
       )}
-      <hr className="border-blueGray-200 mb-5 mt-3 dark:border-blueGray-700 dark:border-opacity-60" />
+      <hr className="border-blueGray-200 mb-3 mt-3 dark:border-blueGray-700 dark:border-opacity-60" />
       <SectionProjects />
     </main>
   );

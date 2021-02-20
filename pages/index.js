@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     if (!perfil && !error) {
       setPerfilMethod(data);
-      // setLoadingMethod(false);
+      setLoadingMethod(false);
     }
   }, [data]);
 
