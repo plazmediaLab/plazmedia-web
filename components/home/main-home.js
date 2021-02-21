@@ -23,12 +23,12 @@ export default function MainHome() {
         <>
           <MainHomeHello text={perfil?.welcome ? perfil?.welcome : ''} />
           <MainHomeAboutMe text={perfil?.about_me ? perfil?.about_me : ''} />
-          <button
+          {/* <button
             type="button"
             onClick={setOnlineMethod}
             className={`${online ? 'text-red-500' : 'text-green-500'}`}>
             {online ? 'Disconnect' : 'Connect'}
-          </button>
+          </button> */}
         </>
       )}
       <hr className="border-blueGray-200 mb-3 mt-3 dark:border-blueGray-700 dark:border-opacity-60" />
