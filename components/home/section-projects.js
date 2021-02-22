@@ -28,15 +28,15 @@ export default function SectionProjects() {
 
   return (
     <section>
-      <span className="flex items-center justify-between">
+      <span className="flex gap-y-2 md:gap-y-0 md:flex-row flex-col items-center justify-between mb-5 mt-4">
         {loadingProjects ? (
           <>
-            <span className="w-3/5 rounded-md h-8 skeleton-pulse mt-4 mb-5" />
-            <span className="w-28 rounded-full h-8 skeleton-pulse mt-4 mb-5" />
+            <span className="w-3/5 rounded-md h-8 skeleton-pulse" />
+            <span className="w-28 rounded-full h-8 skeleton-pulse mt-1 md:mt-0" />
           </>
         ) : (
           <>
-            <h3 className="text-2xl font-medium mb-5 mt-4">Mis proyectos destacados</h3>
+            <h3 className="text-2xl font-medium">Mis proyectos destacados</h3>
             <a
               className="text-blueGray-400 dark:text-font-placeholder dark:hover:text-font-secondary flex items-center"
               title="Plazmedia GitHub"
