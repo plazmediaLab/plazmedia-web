@@ -2,6 +2,7 @@ import AppContext from 'context/AppContext/AppContext';
 import { useContext } from 'react';
 import MainHomeAboutMe from './main-home__about_me';
 import MainHomeHello from './main-home__hello';
+import SectionBlogs from './section-blogs';
 import SectionProjects from './section-projects';
 
 export default function MainHome() {
@@ -33,6 +34,7 @@ export default function MainHome() {
       )}
       <hr className="border-blueGray-200 mb-3 mt-3 dark:border-blueGray-700 dark:border-opacity-60" />
       <SectionProjects />
+      <SectionBlogs />
     </main>
   );
 }
