@@ -2,6 +2,7 @@ import AppContext from 'context/AppContext/AppContext';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import NavHedare from './nav-header';
+import RepoLinkSection from './repo-link-section';
 import TitleHeader from './title-header';
 
 export default function ProjectMainContent() {
@@ -34,6 +35,7 @@ export default function ProjectMainContent() {
     <section>
       <NavHedare slug={slug} />
       <TitleHeader project={project} />
+      <RepoLinkSection repoUrl={project?.url} />
     </section>
   );
 }
