@@ -19,7 +19,7 @@ export default function RepoInfoSection({ project }) {
   console.log(project);
 
   return (
-    <section className="mt-14 grid gap-5 md:gap-12">
+    <section className="mt-10 md:mt-14 flex flex-col md:flex-row gap-5 md:gap-12">
       <AsideLeftRepoInfo thumbnail={project.screenshot} className="bg-pink-500 p-5" />
       <AsideRightRepoInfo readme={readme} />
       <style jsx>{`
