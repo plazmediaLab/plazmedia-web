@@ -1,8 +1,6 @@
-import GitHubIcon from 'components/resources/icons/githob-icon';
-
 export default function RepoLinkSection({ repoUrl }) {
   return (
-    <div className="flex items-center gap-x-2 mt-3 md:mt-0">
+    <div className="flex items-center gap-x-2 mt-3 md:mt-2 ">
       <svg
         className="min-w-4 w-4 min-h-4 h-4"
         xmlns="http://www.w3.org/2000/svg"

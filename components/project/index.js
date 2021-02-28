@@ -2,13 +2,12 @@ import AppContext from 'context/AppContext/AppContext';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import NavHedare from './nav-header';
+import RepoInfoSection from './repo-info-section';
 import RepoLinkSection from './repo-link-section';
 import TitleHeader from './title-header';
 
 export default function ProjectMainContent() {
   const [project, setproject] = useState({});
-  const [readme, setReadme] = useState('');
-  const [loading, setLoading] = useState(true);
 
   const router = useRouter();
   const { slug } = router.query;
@@ -21,21 +20,13 @@ export default function ProjectMainContent() {
       setproject(project);
     }
   }, [projects]);
-  useEffect(() => {
-    fetch(`https://raw.githubusercontent.com/plazmediaLab/${slug}/master/README.md`)
-      .then((res) => res.text())
-      .then((data) => {
-        setReadme(data);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }, [slug]);
 
   return (
     <section>
       <NavHedare slug={slug} />
       <TitleHeader project={project} />
       <RepoLinkSection repoUrl={project?.url} />
+      <RepoInfoSection project={project} />
     </section>
   );
 }
